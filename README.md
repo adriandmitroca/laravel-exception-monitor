@@ -3,6 +3,8 @@ Laravel Exception Monitor
 
 This package notifies you when exceptions are thrown on some of your production application. It's like lite and free version of Bugsnag for small projects for which the use of this amazing SaaS tool would be simply overkill.
 
+![Slack Preview](http://i.imgur.com/CtNRr6U.png)
+
 #### Installation
 ``` bash
 composer require adriandmitroca/laravel-exception-monitor
