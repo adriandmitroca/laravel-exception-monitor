@@ -1,7 +1,7 @@
 {
     "name": "adriandmitroca/laravel-exception-monitor",
     "description": "Little Laravel package to notify you about exceptions in your application.",
-    "keywords": [],
+    "keywords": ["adriandmitroca", "laravel", "exception monitor"],
     "license": "MIT",
     "authors": [
         {
