@@ -25,7 +25,6 @@ class MonitorExceptionHandler extends ExceptionHandler
 
         if (app()->bound('exception-monitor')) {
             app('exception-monitor')->notifyException($e);
-            dd('Lifecycle of Exception Monitor has handed');
         }
 
         return parent::report($e);
