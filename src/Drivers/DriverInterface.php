@@ -2,7 +2,7 @@
 
 namespace Adriandmitroca\LaravelExceptionMonitor\Drivers;
 
-interface Driver
+interface DriverInterface
 {
     public function send(\Exception $exception);
 }

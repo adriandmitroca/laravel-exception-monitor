@@ -2,13 +2,12 @@
 
 namespace Adriandmitroca\LaravelExceptionMonitor\Drivers;
 
-use Adriandmitroca\LaravelExceptionMonitor\Parsers\SlackExceptionParser;
 use Carbon\Carbon;
 use Maknz\Slack\Attachment;
 use Maknz\Slack\AttachmentField;
 use Maknz\Slack\Client as Slack;
 
-class SlackDriver implements Driver
+class SlackDriver implements DriverInterface
 {
 
     protected $slack;

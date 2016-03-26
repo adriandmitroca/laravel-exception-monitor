@@ -12,7 +12,7 @@ class ExceptionMonitor
      */
     public function notifyException(\Exception $e)
     {
-        $driver = config('exception-monitor.drivers');;
+        $driver = config('exception-monitor.drivers');
 
         if (is_array($driver)) {
             foreach ($driver as $instance) {

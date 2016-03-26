@@ -4,7 +4,7 @@ namespace Adriandmitroca\LaravelExceptionMonitor\Drivers;
 
 use Illuminate\Contracts\Mail\Mailer;
 
-class MailDriver implements Driver
+class MailDriver implements DriverInterface
 {
 
     protected $mailer;
