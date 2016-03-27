@@ -21,9 +21,9 @@ Next, you need to register Service Provider in `config/app.php`
 ```php
 $providers = [
     ...
-    Adriandmitroca\LaravelExceptionMonitor\ExceptionMonitorServiceProvider::class
+    Adriandmitroca\LaravelExceptionMonitor\ExceptionMonitorServiceProvider::class,
     ...
-]
+];
 ```
 
 and then publish configuration files
@@ -36,6 +36,8 @@ You also have to make sure if you have [makzn/slack](https://github.com/maknz/sl
 #### Configuration
 Config File is pretty self-explanatory.
 ```php
+<?php
+
 return [
     /*
      |--------------------------------------------------------------------------
@@ -47,7 +49,7 @@ return [
      | Supported: "mail", "slack". You can use multiple drivers.
      |
      */
-    'drivers'               => [ 'mail', 'slack' ],
+    'drivers'      => [ 'mail', 'slack' ],
 
     /*
      |--------------------------------------------------------------------------
@@ -57,18 +59,18 @@ return [
      | Set environments that should generate notifications.
      |
      */
-    'notified_environments' => [ 'production' ],
+    'environments' => [ 'production' ],
 
     /*
-      |--------------------------------------------------------------------------
-      | Mail Configuration
-      |--------------------------------------------------------------------------
-      |
-      | It uses your app default Mail driver. You shouldn't probably touch the view
-      | property unless you know what you're doing.
-      |
-      */
-    'mail'                  => [
+     |--------------------------------------------------------------------------
+     | Mail Configuration
+     |--------------------------------------------------------------------------
+     |
+     | It uses your app default Mail driver. You shouldn't probably touch the view
+     | property unless you know what you're doing.
+     |
+     */
+    'mail'         => [
         'from' => 'sender@example.com',
         'to'   => 'recipient@example.com',
         'view' => 'mails/exception-monitor'
@@ -77,7 +79,7 @@ return [
     /*
      * Uses maknz\slack package.
      */
-    'slack'                 => [
+    'slack'        => [
         'channel'  => '#bugtracker',
         'username' => 'Exception Monitor',
         'icon'     => ':robot_face:',
