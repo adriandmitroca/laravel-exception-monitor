@@ -21,7 +21,7 @@ return [
      | Set environments that should generate notifications.
      |
      */
-    'notified_environments' => [ 'production' ],
+    'environments' => [ 'production' ],
 
     /*
       |--------------------------------------------------------------------------

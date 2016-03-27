@@ -14,12 +14,14 @@ class ExceptionMonitor
     {
         $driver = config('exception-monitor.drivers');
 
-        if (is_array($driver)) {
-            foreach ($driver as $instance) {
-                $this->sendException($e, $instance);
+        if ($this->enabledEnvironment(app()->environment())) {
+            if (is_array($driver)) {
+                foreach ($driver as $instance) {
+                    $this->sendException($e, $instance);
+                }
+            } else {
+                $this->sendException($e, $driver);
             }
-        } else {
-            $this->sendException($e, $driver);
         }
     }
 
@@ -49,6 +51,25 @@ class ExceptionMonitor
         $class = '\Adriandmitroca\LaravelExceptionMonitor\Drivers\\' . ucfirst($driver) . 'Driver';
 
         return app($class);
+    }
+
+
+    /**
+     * Check if given environment is enabled in configuration file.
+     *
+     * @param $environment
+     *
+     * @return mixed
+     */
+    public function enabledEnvironment($environment)
+    {
+        $config = config('exception-monitor.environments');
+
+        if (is_array($config)) {
+            return in_array($environment, config('exception-monitor.environments'));
+        }
+
+        return $environment === $config;
     }
 
 }
